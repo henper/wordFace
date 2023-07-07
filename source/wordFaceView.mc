@@ -66,13 +66,13 @@ class wordFaceView extends WatchUi.WatchFace {
             var minute = clockTime.min;
             var offset = fuzziness/2;
             if (minute > 30) {
-                precision = precision + " i ";
+                precision = precision + " i \n";
                 // re-use the table by playing the uno-reverse card
                 minute = minute - 30;
                 minutes = minutes.reverse();
                 offset = -fuzziness/2 - 1;
             } else {
-                precision = precision + " över ";
+                precision = precision + "\növer\n";
             }
 
             var minuteIndex = (minute + offset) / fuzziness - 1;
