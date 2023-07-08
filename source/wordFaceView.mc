@@ -45,6 +45,14 @@ class wordFaceView extends WatchUi.WatchFace {
 
         var fuzziness = 5;
 
+        var hours = ["Tolv", "Ett", "Två", "Tre", "Fyra", "Fem", "Sex", "Sju", "Åtta", "Nio", "Tio", "Elva", "Tolv"];
+        var hourIndex = clockTime.hour;
+
+        // 24-hour time is a system setting, that we choose to ignore. TODO: show AM/PM?
+        if (hourIndex > 12) {
+            hourIndex = hourIndex - 12;
+        }
+
         var precision = "";
 
         // Are we around the hour mark?
@@ -59,33 +67,26 @@ class wordFaceView extends WatchUi.WatchFace {
             } else if (clockTime.min < 30 - fuzziness/2) {
                 precision = "Fem i ";
             }
-
             precision = precision + "Halv ";
+            hourIndex++; // switch semantics to next hour
         } else {
             var minutes = ["Fem", "Tio", "Kvart", "Tjugo"];
             var minute = clockTime.min;
             var offset = fuzziness/2;
             if (minute > 30) {
-                precision = precision + " i \n";
+                precision = precision + " i ";
+                hourIndex++; // switch semantics to next hour
                 // re-use the table by playing the uno-reverse card
                 minute = minute - 30;
                 minutes = minutes.reverse();
                 offset = -fuzziness/2 - 1;
             } else {
-                precision = precision + "\növer\n";
+                precision = precision + " över ";
             }
 
             var minuteIndex = (minute + offset) / fuzziness - 1;
             
             precision = minutes[minuteIndex] + precision;
-        }
-        
-        var hours = ["Tolv", "Ett", "Två", "Tre", "Fyra", "Fem", "Sex", "Sju", "Åtta", "Nio", "Tio", "Elva", "Tolv"];
-        var hourIndex = clockTime.hour;
-
-        // 24-hour time is a system setting, that we choose to ignore. TODO: show AM/PM?
-        if (hourIndex > 12) {
-            hourIndex = hourIndex - 12;
         }
 
         var timeString = precision + hours[hourIndex];
