@@ -1,11 +1,10 @@
 <layout id="WatchFace">
     <!-- <label id="TimeLabel" x="center" y="center" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" /> -->
 
-    <text-area id="TimeLabel" x="center" y="center" width="80%" height="80%" justification="Graphics.TEXT_JUSTIFY_CENTER">
+    <text-area id="TimeLabel" x="10%" y="34%" width="80%" height="31%" justification="Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER" color="Graphics.COLOR_BLUE">
         <fonts>
             <font>Gfx.FONT_LARGE</font>
             <font>Gfx.FONT_MEDIUM</font>
-            <font>Gfx.FONT_XTINY</font>
         </fonts>
     </text-area>
 </layout>
