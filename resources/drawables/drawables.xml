@@ -1,6 +1,9 @@
 <drawables>
     <!--<bitmap id="LauncherIcon" filename="launcher_icon.png" />-->
 
-    <!-- Fuzzy Kiwi: <a href="https://www.flaticon.com/free-icons/fuzzy-kiwi" title="fuzzy kiwi icons">Fuzzy kiwi icons created by Freepik - Flaticon</a> -->
+    <!-- Fuzzy Kiwi <a href="https://www.flaticon.com/free-icons/fuzzy-kiwi" title="fuzzy kiwi icons">Fuzzy kiwi icons created by Freepik - Flaticon</a> -->
     <bitmap id="LauncherIcon" filename="fuzzy-kiwi.png"/>
+
+    <!-- Footprint (blue) 16x16 <a href="https://www.flaticon.com/free-icons/steps" title="steps icons">Steps icons created by icon_small - Flaticon</a> -->
+
 </drawables>
