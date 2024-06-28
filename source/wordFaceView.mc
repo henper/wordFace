@@ -55,9 +55,13 @@ class wordFaceView extends WatchUi.WatchFace {
 
         var precision = "";
 
-        // Are we around the hour mark?
-        if ((60 - fuzziness/2 <= clockTime.min) || (clockTime.min <= fuzziness/2)) {
+        // Are we just after the hour mark?
+        if (clockTime.min <= fuzziness/2) {
             // TODO: oh'clock suffix?
+        
+        // Are we just before the hour mark?
+        } else if (60 - fuzziness/2 <= clockTime.min ) {
+            hourIndex++; // switch semantics to next hour
         
         // Are we around the half hour mark?
         } else if (abs(clockTime.min - 30) <= (3*fuzziness)/2) {
