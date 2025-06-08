@@ -80,6 +80,12 @@ class wordFaceView extends WatchUi.WatchFace {
             if (minute > 30) {
                 precision = precision + " i ";
                 hourIndex++; // switch semantics to next hour
+
+                // handle the case where we're past the half hour mark of the twelth hour
+                if (hourIndex > 12) {
+                    hourIndex -= 12;
+                }
+
                 // re-use the table by playing the uno-reverse card
                 minute = minute - 30;
                 minutes = minutes.reverse();
